@@ -19,8 +19,6 @@ enum PlanetDirection : CGFloat { // 0 is north, 180 is south,
     case SouthWest = 1.25
     case NorthWest = 1.75
     
-    
-    
     func oppositeDirection() -> PlanetDirection {
         if self.rawValue >= 1.0 {
             return PlanetDirection(rawValue: self.rawValue - 1.0)!
@@ -41,7 +39,7 @@ enum PlanetDirection : CGFloat { // 0 is north, 180 is south,
         let entry = self.rawValue
         var start = entry + 0.5
         let upperBound:CGFloat = 100
-        let percentages:[CGFloat] = [0.05, 0.20, 0.50, 0.20, 0.05]
+        let percentages:[CGFloat] = [0.0, 0.20, 0.50, 0.20, 0.0]
         let random = randomInt(lower: 1, upper: upperBound)
         var i = 0
         var p:CGFloat = 0

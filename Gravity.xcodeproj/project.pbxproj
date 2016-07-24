@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF59556D1D4554FF0050299B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF59556C1D4554FF0050299B /* UIColor+Extensions.swift */; };
 		DF9AAEB11D21DB6F0007FAB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAEB01D21DB6F0007FAB1 /* AppDelegate.swift */; };
 		DF9AAEB31D21DB6F0007FAB1 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DF9AAEB21D21DB6F0007FAB1 /* GameScene.sks */; };
 		DF9AAEB51D21DB6F0007FAB1 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAEB41D21DB6F0007FAB1 /* GameScene.swift */; };
@@ -29,11 +30,14 @@
 		DF9AAEE31D21DC250007FAB1 /* SKTEffects.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAED71D21DC250007FAB1 /* SKTEffects.swift */; };
 		DF9AAEE41D21DC250007FAB1 /* SKTTimingFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAED81D21DC250007FAB1 /* SKTTimingFunctions.swift */; };
 		DF9AAEE51D21DC250007FAB1 /* Vector3.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAED91D21DC250007FAB1 /* Vector3.swift */; };
-		DF9AAEE81D21DCB70007FAB1 /* GravityObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAEE71D21DCB70007FAB1 /* GravityObject.swift */; };
 		DF9AAEEB1D24C69E0007FAB1 /* Enums.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF9AAEEA1D24C69E0007FAB1 /* Enums.swift */; };
+		DFA7F68D1D38A1EA0040E987 /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7F68C1D38A1EA0040E987 /* Background.swift */; };
+		DFB177981D444B9C00437156 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB177971D444B9C00437156 /* Color.swift */; };
+		DFEE8B261D3AE02E00ADA206 /* BDGradientNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEE8B251D3AE02E00ADA206 /* BDGradientNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF59556C1D4554FF0050299B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		DF9AAEAD1D21DB6F0007FAB1 /* Gravity.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gravity.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF9AAEB01D21DB6F0007FAB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DF9AAEB21D21DB6F0007FAB1 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
@@ -58,8 +62,10 @@
 		DF9AAED71D21DC250007FAB1 /* SKTEffects.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTEffects.swift; sourceTree = "<group>"; };
 		DF9AAED81D21DC250007FAB1 /* SKTTimingFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKTTimingFunctions.swift; sourceTree = "<group>"; };
 		DF9AAED91D21DC250007FAB1 /* Vector3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3.swift; sourceTree = "<group>"; };
-		DF9AAEE71D21DCB70007FAB1 /* GravityObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GravityObject.swift; sourceTree = "<group>"; };
 		DF9AAEEA1D24C69E0007FAB1 /* Enums.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Enums.swift; sourceTree = "<group>"; };
+		DFA7F68C1D38A1EA0040E987 /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
+		DFB177971D444B9C00437156 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		DFEE8B251D3AE02E00ADA206 /* BDGradientNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BDGradientNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,7 @@
 				DF9AAEB21D21DB6F0007FAB1 /* GameScene.sks */,
 				DF9AAEB41D21DB6F0007FAB1 /* GameScene.swift */,
 				DF9AAEB61D21DB6F0007FAB1 /* GameViewController.swift */,
+				DFB177961D4449C500437156 /* Classes */,
 				DF9AAEE91D21DCBF0007FAB1 /* Protocols */,
 				DF9AAECC1D21DC040007FAB1 /* Entities */,
 				DF9AAEE61D21DC330007FAB1 /* Extra */,
@@ -112,6 +119,7 @@
 			children = (
 				DF9AAEC61D21DBD40007FAB1 /* Planet.swift */,
 				DF9AAEC71D21DBD40007FAB1 /* Player.swift */,
+				DFA7F68C1D38A1EA0040E987 /* Background.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -140,6 +148,7 @@
 			children = (
 				DF9AAECA1D21DC010007FAB1 /* CoreSwift.swift */,
 				DF9AAEEA1D24C69E0007FAB1 /* Enums.swift */,
+				DFEE8B251D3AE02E00ADA206 /* BDGradientNode.swift */,
 				DF9AAECD1D21DC180007FAB1 /* SKTUtils */,
 			);
 			name = Extra;
@@ -148,9 +157,17 @@
 		DF9AAEE91D21DCBF0007FAB1 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				DF9AAEE71D21DCB70007FAB1 /* GravityObject.swift */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		DFB177961D4449C500437156 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				DFB177971D444B9C00437156 /* Color.swift */,
+				DF59556C1D4554FF0050299B /* UIColor+Extensions.swift */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,6 +244,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF9AAEB51D21DB6F0007FAB1 /* GameScene.swift in Sources */,
+				DFEE8B261D3AE02E00ADA206 /* BDGradientNode.swift in Sources */,
+				DFB177981D444B9C00437156 /* Color.swift in Sources */,
 				DF9AAEE41D21DC250007FAB1 /* SKTTimingFunctions.swift in Sources */,
 				DF9AAEEB1D24C69E0007FAB1 /* Enums.swift in Sources */,
 				DF9AAEB71D21DB6F0007FAB1 /* GameViewController.swift in Sources */,
@@ -234,8 +253,8 @@
 				DF9AAEDB1D21DC250007FAB1 /* CGPoint+Extensions.swift in Sources */,
 				DF9AAEDA1D21DC250007FAB1 /* CGFloat+Extensions.swift in Sources */,
 				DF9AAECB1D21DC010007FAB1 /* CoreSwift.swift in Sources */,
+				DFA7F68D1D38A1EA0040E987 /* Background.swift in Sources */,
 				DF9AAEE21D21DC250007FAB1 /* SKTAudio.swift in Sources */,
-				DF9AAEE81D21DCB70007FAB1 /* GravityObject.swift in Sources */,
 				DF9AAEB11D21DB6F0007FAB1 /* AppDelegate.swift in Sources */,
 				DF9AAEE11D21DC250007FAB1 /* SKNode+Extensions.swift in Sources */,
 				DF9AAEDE1D21DC250007FAB1 /* SKAction+Extensions.swift in Sources */,
@@ -245,6 +264,7 @@
 				DF9AAEE31D21DC250007FAB1 /* SKTEffects.swift in Sources */,
 				DF9AAEDD1D21DC250007FAB1 /* Int+Extensions.swift in Sources */,
 				DF9AAEE51D21DC250007FAB1 /* Vector3.swift in Sources */,
+				DF59556D1D4554FF0050299B /* UIColor+Extensions.swift in Sources */,
 				DF9AAEE01D21DC250007FAB1 /* SKColor+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -8,9 +8,9 @@
 
 import SpriteKit
 let MAX_NUM_PLANETS:Int = 10
-let GLOW_WIDTH:CGFloat = 2
+let GLOW_WIDTH:CGFloat = 0
 let PLAYER_SIZE:CGFloat = 10
-let MAX_LIVES:CGFloat = 3
+let MAX_LIVES:CGFloat = 2
 
 let LOWERBOUND_DISTANCE_BETWEEN:CGFloat = 20
 let UPPERBOUND_DISTANCE_BETWEEN:CGFloat = 80
@@ -23,6 +23,8 @@ let period:CGFloat = 1.25 //Number of seconds it takes to complete 1 orbit.
 let pi:CGFloat = CGFloat(M_PI)
 
 let gameCamera = SKCameraNode()
+let whiteTexture:SKTexture = SKTexture(size: CGSizeMake(2*UPPERBOUND_PLANET_SIZE, 2*UPPERBOUND_PLANET_SIZE), color1: CIColor(color: UIColor.whiteColor()), color2: CIColor(color:UIColor.whiteColor()))
+let planetColorGenerator:TwoColorGenerator = TwoColorGenerator(stripSize: 5)
 
 class GameScene: SKScene {
     
@@ -43,6 +45,7 @@ class GameScene: SKScene {
             let action = SKAction.moveTo(currentPlanet.position, duration: 0.5)
             action.timingMode = .EaseOut
             gameCamera.runAction(action)
+            background.runAction(action)
         }
     }
     var score:Int = 0 {
@@ -62,22 +65,38 @@ class GameScene: SKScene {
     var livesLabel:SKLabelNode!
     var loops:Int = 0
     
+    var background:Background!
+    
     override func didMoveToView(view: SKView) {
         view.backgroundColor = SKColor.blackColor()
         self.backgroundColor = SKColor.blackColor()
         self.physicsWorld.gravity = CGVectorMake(0,0)
+        
+        //camera
         self.camera = gameCamera
         self.addChild(gameCamera)
+        
+        //score label
         scoreLabel = SKLabelNode(text: String(score))
-        scoreLabel.position = CGPointMake(-20 , frame.height/2 - 50)
+        scoreLabel.position = CGPointMake(-40 , frame.height/2 - 50)
         gameCamera.addChild(scoreLabel)
+        
+        //lives label
         livesLabel = SKLabelNode(text: String(lives))
-        livesLabel.position = CGPointMake(20, frame.height/2 - 50)
+        livesLabel.position = CGPointMake(40, frame.height/2 - 50)
         gameCamera.addChild(livesLabel)
         
+        //background
+        generateBackground()
+        
+        //first planet for reference
         generatePlanet()
         currentPlanet = queue.last!
+        
+        //player
         initializePlayer(playerOfRadius: PLAYER_SIZE)
+        
+        //generate rest of planets
         generateHalfPlanets()
     }
    
@@ -121,7 +140,6 @@ class GameScene: SKScene {
             if (angularDistance <= 0) {
                 angularDistance = pi * 2.0
             }
-            
         }
     }
     
@@ -135,10 +153,9 @@ class GameScene: SKScene {
         let radius = randomInt(lower: LOWERBOUND_PLANET_SIZE, upper: UPPERBOUND_PLANET_SIZE)
         let planet = Planet(circleOfRadius: radius)
         planet.radius = radius
-        planet.fillColor = SKColor.whiteColor()
+        planet.setup()
+        planet.strokeColor = UIColor.clearColor()
         planet.glowWidth = GLOW_WIDTH
-        planet.physicsBody = SKPhysicsBody(circleOfRadius: radius)
-        planet.physicsBody!.dynamic = false
         queue.insert(planet, atIndex: 0)
         if !(queue.count == 1) {
             let previousPlanet = queue[1]
@@ -192,5 +209,14 @@ class GameScene: SKScene {
     
     func gameOver() {
         //TODO: GAMEOVER
+    }
+    
+    func generateBackground() {
+        background = Background()
+        background.setup()
+        background.position = CGPointMake(frame.midX, frame.midY)
+        background.anchorPoint = CGPointMake(0.5, 0.5)
+        background.zPosition = -100
+        self.addChild(background)
     }
 }

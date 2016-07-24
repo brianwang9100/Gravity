@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class Player: SKShapeNode, GravityObject {
+class Player: SKShapeNode {
     var radius:CGFloat = 0
     
     override init() {
