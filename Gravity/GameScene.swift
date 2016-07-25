@@ -7,8 +7,8 @@
 //
 
 import SpriteKit
-let MAX_NUM_PLANETS:Int = 10
-let GLOW_WIDTH:CGFloat = 0
+let MAX_NUM_PLANETS:Int = 4
+let GLOW_WIDTH:CGFloat = 5
 let PLAYER_SIZE:CGFloat = 10
 let MAX_LIVES:CGFloat = 2
 
@@ -32,7 +32,10 @@ class GameScene: SKScene {
         didSet {
             if queue.count > MAX_NUM_PLANETS {
                 let lastPlanet = queue[queue.count - 1]
-                lastPlanet.removeFromParent()
+                let fadeOut = SKAction.fadeOutWithDuration(2)
+                let remove = SKAction.removeFromParentAfterDelay(2)
+                lastPlanet.runAction(fadeOut)
+                lastPlanet.runAction(remove)
                 lastPlanet.nextPlanet.previousPlanet = nil
                 queue.removeLast()
             }
@@ -78,13 +81,16 @@ class GameScene: SKScene {
         
         //score label
         scoreLabel = SKLabelNode(text: String(score))
-        scoreLabel.position = CGPointMake(-40 , frame.height/2 - 50)
+        scoreLabel.fontSize = 60
+        scoreLabel.horizontalAlignmentMode = .Center
+        scoreLabel.verticalAlignmentMode = .Top
+        scoreLabel.position = CGPointMake(0, frame.height/2 - 40)
         gameCamera.addChild(scoreLabel)
         
         //lives label
-        livesLabel = SKLabelNode(text: String(lives))
-        livesLabel.position = CGPointMake(40, frame.height/2 - 50)
-        gameCamera.addChild(livesLabel)
+//        livesLabel = SKLabelNode(text: String(lives))
+//        livesLabel.position = CGPointMake(40, frame.height/2 - 50)
+//        gameCamera.addChild(livesLabel)
         
         //background
         generateBackground()
@@ -154,8 +160,6 @@ class GameScene: SKScene {
         let planet = Planet(circleOfRadius: radius)
         planet.radius = radius
         planet.setup()
-        planet.strokeColor = UIColor.clearColor()
-        planet.glowWidth = GLOW_WIDTH
         queue.insert(planet, atIndex: 0)
         if !(queue.count == 1) {
             let previousPlanet = queue[1]
@@ -179,6 +183,7 @@ class GameScene: SKScene {
             planet.exitDirection = PlanetDirection(rawValue: randomInt(lower: 0, upper: 7) * 0.25)
         }
         self.addChild(planet)
+//        let fadeAction = SKAction.fadeAlphaTo(1, duration: 5)
         
     }
     

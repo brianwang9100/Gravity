@@ -33,6 +33,24 @@ extension UIColor {
         let a = finalComp.alpha
         return (r,g,b,a, r*255.0, g*255.0, b*255.0)
     }
+    
+    func colorWithShadeOffset(offset: CGFloat, R: Bool) -> UIColor {
+        let comp = self.components
+        if R {
+            let r = comp.redR + offset
+            let g = comp.greenR + offset
+            let b = comp.blueR + offset
+            let a = comp.alpha + offset
+            return UIColor.colorFromR(r, greenR: g, blueR: b, alpha: a)
+        }
+        let r = comp.red + offset
+        let g = comp.green + offset
+        let b = comp.blue + offset
+        let a = comp.alpha + offset
+        return UIColor(red: r, green: g, blue: b, alpha: a)
+        
+    }
+    
 }
 
 //public func + (left: UIColor, right: UIColor) -> UIColor {

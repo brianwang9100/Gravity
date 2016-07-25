@@ -11,10 +11,10 @@ import SpriteKit
 
 //https://en.wikipedia.org/wiki/Web_colors
 let COLORS = [
-                UIColor.colorFromHex(0xFFFFFF),     //White
-                UIColor.colorFromHex(0xC0C0C0),     //Silver
-                UIColor.colorFromHex(0x808080),     //Gray
-                UIColor.colorFromHex(0x000000),     //Black
+//                UIColor.colorFromHex(0xFFFFFF),     //White
+//                UIColor.colorFromHex(0xC0C0C0),     //Silver
+//                UIColor.colorFromHex(0x808080),     //Gray
+//                UIColor.colorFromHex(0x000000),     //Black
                 UIColor.colorFromHex(0xFF0000),     //Red
                 UIColor.colorFromHex(0x800000),     //Maroon
                 UIColor.colorFromHex(0xFFFF00),     //Yellow
