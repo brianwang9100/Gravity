@@ -8,7 +8,7 @@
 
 import SpriteKit
 let MAX_NUM_PLANETS:Int = 4
-let GLOW_WIDTH:CGFloat = 5
+let GLOW_WIDTH:CGFloat = 3
 let PLAYER_SIZE:CGFloat = 10
 let MAX_LIVES:CGFloat = 2
 
@@ -32,10 +32,9 @@ class GameScene: SKScene {
         didSet {
             if queue.count > MAX_NUM_PLANETS {
                 let lastPlanet = queue[queue.count - 1]
-                let fadeOut = SKAction.fadeOutWithDuration(2)
-                let remove = SKAction.removeFromParentAfterDelay(2)
-                lastPlanet.runAction(fadeOut)
-                lastPlanet.runAction(remove)
+                lastPlanet.fadeOutWithCompletionBlock(sec: 1, closure: {
+                    lastPlanet.removeFromParent()
+                })
                 lastPlanet.nextPlanet.previousPlanet = nil
                 queue.removeLast()
             }
@@ -195,7 +194,8 @@ class GameScene: SKScene {
         player.position = currentPlanet.position + CGPointMake(0, currentPlanet.radius + currentPlayer.radius + distance)
         player.fillColor = SKColor.whiteColor()
         player.glowWidth = GLOW_WIDTH
-        player.physicsBody = SKPhysicsBody(circleOfRadius: radius)
+//        player.physicsBody = SKPhysicsBody(circleOfRadius: radius)
+        player.blendMode = .Add
         
         self.addChild(player)
     }

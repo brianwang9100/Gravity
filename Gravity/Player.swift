@@ -20,4 +20,7 @@ class Player: SKShapeNode {
         super.init(coder: aDecoder)
     }
     
+    func setup() {
+        
+    }
 }
